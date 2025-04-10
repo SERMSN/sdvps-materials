@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stage('---------------- Checkout -------------') {
+            steps {
+                git url: 'https://github.com/SERMSN/sdvps-materials.git', branch: 'main'
+            }
+        }
+        
         stage('----------- Test Go ----------') {
             steps {
                 sh 'go test .'
